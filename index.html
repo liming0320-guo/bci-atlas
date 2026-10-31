@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="一个可交互、可持续维护的脑机接口研究地图，包含论文时间线、文献卡片库、主题地图与研究空白。">
+  <meta name="theme-color" content="#f4f0e6">
+  <meta name="color-scheme" content="light dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="BCI Atlas">
+  <title>BCI Atlas · 脑机接口研究地图</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <header class="site-header">
+    <a class="brand" href="#overview" data-nav="overview" aria-label="BCI Atlas 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="brand-copy">
+        <strong>BCI ATLAS</strong>
+        <small>脑机接口研究地图</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="主导航">
+      <button class="nav-item is-active" type="button" data-nav="overview">总览</button>
+      <button class="nav-item" type="button" data-nav="map">主题地图</button>
+      <button class="nav-item" type="button" data-nav="timeline">时间线</button>
+      <button class="nav-item" type="button" data-nav="library">文献库</button>
+      <button class="nav-item" type="button" data-nav="gaps">研究空白</button>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button search-trigger" type="button" aria-label="搜索文献" data-tooltip="搜索文献">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+      </button>
+      <button class="icon-button install-trigger" type="button" aria-label="iPad 使用与安装说明" data-tooltip="iPad 使用">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="2"></rect><path d="M10 18.5h4"></path></svg>
+      </button>
+      <button class="button button-primary add-paper-trigger" type="button">
+        <span aria-hidden="true">＋</span>
+        添加文献
+      </button>
+      <button class="icon-button theme-trigger" type="button" aria-label="切换深浅色主题" data-tooltip="切换主题">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page is-active" id="page-overview" data-page="overview" aria-labelledby="overview-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">FROM NEURAL SIGNALS TO HUMAN AGENCY</p>
+          <h1 id="overview-title">从神经信号<br><em>抵达行动与表达</em></h1>
+          <p class="hero-lead">一张可追溯、可扩展的脑机接口研究地图。沿着真实论文，看见范式如何成熟、技术如何迁移，以及证据仍停留在哪里。</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-nav="map">打开研究地图 <span aria-hidden="true">↗</span></button>
+            <button class="button button-secondary" type="button" data-nav="timeline">从 1973 年开始</button>
+          </div>
+          <div class="hero-note">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>元数据已核验 · 最近更新 <time id="updated-date"></time></span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-labelledby="signal-chain-title">
+          <div class="signal-orbit" aria-hidden="true">
+            <span class="orbit orbit-one"></span>
+            <span class="orbit orbit-two"></span>
+            <span class="orbit-point point-one"></span>
+            <span class="orbit-point point-two"></span>
+            <span class="orbit-core">BCI</span>
+          </div>
+          <div class="signal-card">
+            <div class="signal-card-head">
+              <span>NEURAL SIGNAL</span>
+              <span class="live-label"><i></i> LIVE MODEL</span>
+            </div>
+            <svg class="waveform" viewBox="0 0 560 170" role="img" aria-label="从神经信号到行动的抽象波形">
+              <path class="wave-grid" d="M0 42H560M0 85H560M0 128H560M70 0V170M140 0V170M210 0V170M280 0V170M350 0V170M420 0V170M490 0V170"></path>
+              <path class="wave-trace" d="M0 94 L16 92 L25 90 L34 95 L46 91 L57 88 L64 104 L69 62 L76 101 L84 90 L96 96 L110 91 L121 86 L132 93 L145 89 L152 102 L157 49 L164 106 L170 90 L185 94 L196 86 L208 91 L222 95 L236 89 L248 97 L260 84 L272 91 L282 90 L290 104 L297 58 L304 99 L313 91 L327 94 L338 88 L351 96 L365 89 L377 93 L389 87 L398 108 L405 55 L413 100 L420 91 L432 95 L443 90 L456 87 L469 94 L482 89 L494 96 L503 59 L509 102 L518 91 L531 94 L544 89 L560 92"></path>
+              <path class="wave-threshold" d="M0 65H560"></path>
+            </svg>
+            <div class="signal-stages" id="signal-stages" aria-label="脑机接口信号链">
+              <button class="signal-stage is-active" type="button" data-stage="record">
+                <span>01</span><strong>采集</strong><small>EEG · ECoG · Spikes</small>
+              </button>
+              <button class="signal-stage" type="button" data-stage="decode">
+                <span>02</span><strong>解码</strong><small>Features · Models</small>
+              </button>
+              <button class="signal-stage" type="button" data-stage="act">
+                <span>03</span><strong>行动</strong><small>Text · Voice · Motion</small>
+              </button>
+              <button class="signal-stage" type="button" data-stage="feedback">
+                <span>04</span><strong>反馈</strong><small>Learning · Control</small>
+              </button>
+            </div>
+            <div class="stage-detail" id="stage-detail" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="overview-strip" aria-label="文献库统计">
+        <div class="stat-item">
+          <strong id="stat-papers">29</strong>
+          <span>篇核心论文</span>
+        </div>
+        <div class="stat-item">
+          <strong><span id="stat-start">1973</span><i>—</i><span id="stat-end">2026</span></strong>
+          <span>年研究跨度</span>
+        </div>
+        <div class="stat-item">
+          <strong id="stat-themes">7</strong>
+          <span>个研究主题</span>
+        </div>
+        <div class="stat-item">
+          <strong id="stat-gaps">9</strong>
+          <span>个待验证空白</span>
+        </div>
+      </section>
+
+      <section class="section-block research-pulse">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RESEARCH PULSE</p>
+            <h2>研究热度正在向哪里聚集？</h2>
+          </div>
+          <p>按文献年份汇总当前库内证据。它反映这张地图的选文结构，不等同于领域总文献量。</p>
+        </div>
+        <div class="pulse-layout">
+          <div class="pulse-chart" id="pulse-chart" role="img" aria-label="各年代脑机接口论文数量柱状图"></div>
+          <div class="pulse-insight">
+            <span class="insight-index">01 / 观察</span>
+            <h3>从“能否控制”转向“能否自然使用”</h3>
+            <p>早期论文确立 P300、ERD/ERS 与运动皮层控制；近五年的重心明显移向高速语音、长期植入、跨模态解码与真实生活场景。</p>
+            <button class="text-link" type="button" data-nav="gaps">查看尚未闭合的空白 <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THREE ENTRY POINTS</p>
+            <h2>选择一个问题进入</h2>
+          </div>
+          <p>不是从“先读综述”开始，而是从你要解释或改善的行为开始。</p>
+        </div>
+        <div class="entry-grid">
+          <button class="entry-card entry-cognition" type="button" data-jump-theme="cognition">
+            <span class="entry-number">01</span>
+            <span class="entry-kicker">认知风险与疾病脑电</span>
+            <strong>能否在症状之前识别网络失稳？</strong>
+            <span class="entry-meta">Microstates · Connectivity · GNN</span>
+            <span class="entry-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="entry-card entry-speech" type="button" data-jump-theme="communication">
+            <span class="entry-number">02</span>
+            <span class="entry-kicker">语音、文字与交流</span>
+            <strong>如何让失去发声能力的人自然表达？</strong>
+            <span class="entry-meta">Speech decoding · ECoG · Streaming</span>
+            <span class="entry-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="entry-card entry-movement" type="button" data-jump-theme="motor">
+            <span class="entry-number">03</span>
+            <span class="entry-kicker">运动与神经康复</span>
+            <strong>闭环刺激能否重新连起意图与身体？</strong>
+            <span class="entry-meta">Prosthesis · Brain-spine · Feedback</span>
+            <span class="entry-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section-block latest-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RECENT FRONTIER</p>
+            <h2>近期前沿</h2>
+          </div>
+          <button class="text-link" type="button" data-nav="library">查看全部文献 <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="latest-grid" id="latest-grid"></div>
+      </section>
+    </section>
+
+    <section class="page" id="page-map" data-page="map" aria-labelledby="map-title" hidden>
+      <div class="page-intro map-intro">
+        <div>
+          <p class="eyebrow">TOPIC MAP / 主题地图</p>
+          <h1 id="map-title">研究不是一个列表，<br>而是一组相互牵引的问题。</h1>
+        </div>
+        <div class="page-intro-aside">
+          <p>选择一个主题，观察它在历史中的证据密度、代表性论文与相邻技术。圆点大小对应当前时间窗口中的论文数量。</p>
+          <div class="segmented-control" id="map-era-filter" aria-label="主题地图时间窗口">
+            <button class="is-active" type="button" data-era="all">全时段</button>
+            <button type="button" data-era="foundation">2010 前</button>
+            <button type="button" data-era="recent">2020 后</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-layout">
+        <div class="topic-map-shell">
+          <div class="topic-map" id="topic-map" aria-label="脑机接口主题关系图">
+            <svg class="map-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="50" y1="50" x2="50" y2="11"></line>
+              <line x1="50" y1="50" x2="16" y2="26"></line>
+              <line x1="50" y1="50" x2="84" y2="24"></line>
+              <line x1="50" y1="50" x2="89" y2="64"></line>
+              <line x1="50" y1="50" x2="72" y2="88"></line>
+              <line x1="50" y1="50" x2="28" y2="88"></line>
+              <line x1="50" y1="50" x2="10" y2="62"></line>
+              <circle cx="50" cy="50" r="25"></circle>
+              <circle cx="50" cy="50" r="39"></circle>
+            </svg>
+            <div class="map-center">
+              <span>BCI</span>
+              <small>人机闭环</small>
+            </div>
+            <div id="map-nodes"></div>
+          </div>
+          <div class="map-legend">
+            <span><i class="legend-paper"></i> 论文主题</span>
+            <span><i class="legend-link"></i> 概念或技术关联</span>
+            <span>点击节点继续探索</span>
+          </div>
+        </div>
+        <aside class="map-detail" id="map-detail" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section class="page" id="page-timeline" data-page="timeline" aria-labelledby="timeline-title" hidden>
+      <div class="page-intro">
+        <div>
+          <p class="eyebrow">TIMELINE / 时间线</p>
+          <h1 id="timeline-title">五十年间，<br>“读脑”逐渐成为可操作的工程。</h1>
+        </div>
+        <div class="page-intro-aside">
+          <p>从直接脑通信的概念，到非侵入式拼写、运动假肢、语音神经假体与闭环脑脊接口。点击任一节点查看它在研究链条中的位置。</p>
+          <div class="timeline-filters">
+            <label>
+              <span>证据类型</span>
+              <select id="timeline-kind">
+                <option value="all">全部类型</option>
+                <option value="classic">经典奠基</option>
+                <option value="breakthrough">方法突破</option>
+                <option value="recent">近期前沿</option>
+              </select>
+            </label>
+            <label>
+              <span>主题</span>
+              <select id="timeline-theme">
+                <option value="all">全部主题</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-layout">
+        <div class="timeline-list" id="timeline-list"></div>
+        <aside class="timeline-detail" id="timeline-detail" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section class="page" id="page-library" data-page="library" aria-labelledby="library-title" hidden>
+      <div class="library-heading">
+        <div>
+          <p class="eyebrow">LITERATURE / 文献卡片库</p>
+          <h1 id="library-title">把论文变成<br>可检索的证据。</h1>
+        </div>
+        <div class="library-title-actions">
+          <button class="button button-secondary manage-data-trigger" type="button">导入 / 导出</button>
+          <button class="button button-primary add-paper-trigger" type="button"><span aria-hidden="true">＋</span> 添加论文</button>
+        </div>
+      </div>
+
+      <div class="library-toolbar">
+        <label class="search-field">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+          <span class="visually-hidden">搜索题名、作者、方法或 DOI</span>
+          <input id="library-search" type="search" placeholder="搜索题名、作者、方法或 DOI…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="library-count" aria-live="polite"><strong id="library-result-count">0</strong> 篇</div>
+      </div>
+
+      <div class="theme-filter-row" id="theme-filter-row" aria-label="按主题筛选"></div>
+
+      <div class="library-controls">
+        <label>
+          <span>年代</span>
+          <select id="library-kind">
+            <option value="all">全部年代</option>
+            <option value="classic">经典奠基</option>
+            <option value="breakthrough">方法突破</option>
+            <option value="recent">近期前沿</option>
+          </select>
+        </label>
+        <label>
+          <span>信号</span>
+          <select id="library-signal">
+            <option value="all">全部信号</option>
+            <option value="EEG">EEG</option>
+            <option value="ECoG">ECoG</option>
+            <option value="Intracortical">皮层内记录</option>
+            <option value="Non-invasive">非侵入式</option>
+            <option value="Conceptual">概念 / 综述</option>
+          </select>
+        </label>
+        <label>
+          <span>排序</span>
+          <select id="library-sort">
+            <option value="newest">最新优先</option>
+            <option value="oldest">最早优先</option>
+            <option value="impact">影响力优先</option>
+          </select>
+        </label>
+        <label class="checkbox-label">
+          <input id="library-favorites" type="checkbox">
+          <span>只看收藏</span>
+        </label>
+        <button class="text-button" id="clear-library-filters" type="button">清除筛选</button>
+      </div>
+
+      <div class="focus-filter" id="focus-filter" hidden>
+        <span id="focus-filter-copy"></span>
+        <button class="text-button" id="clear-focus-filter" type="button">显示全部文献</button>
+      </div>
+
+      <div class="paper-grid" id="paper-grid"></div>
+      <div class="empty-state" id="library-empty" hidden>
+        <span aria-hidden="true">∅</span>
+        <h3>没有匹配的文献</h3>
+        <p>试着减少筛选条件，或添加一篇新论文。</p>
+        <button class="button button-secondary add-paper-trigger" type="button">添加文献</button>
+      </div>
+    </section>
+
+    <section class="page" id="page-gaps" data-page="gaps" aria-labelledby="gaps-title" hidden>
+      <div class="page-intro gaps-intro">
+        <div>
+          <p class="eyebrow">RESEARCH GAPS / 研究空白</p>
+          <h1 id="gaps-title">下一步不一定是更大的模型，<br>而是更完整的问题。</h1>
+        </div>
+        <div class="page-intro-aside">
+          <p>空白不是“没人提过”，而是已有证据仍不能支撑关键结论。每个议题都连接到可核验的入口论文与可操作的研究问题。</p>
+          <div class="editorial-note">
+            <span>编辑判断</span>
+            <p>横轴表示当前证据成熟度，纵轴表示对方法与临床转化的潜在牵引力；位置不是文献计量分数。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gap-toolbar">
+        <div class="segmented-control" id="gap-category-filter" aria-label="按空白类型筛选">
+          <button class="is-active" type="button" data-category="all">全部</button>
+          <button type="button" data-category="method">方法</button>
+          <button type="button" data-category="clinical">临床</button>
+          <button type="button" data-category="governance">数据与治理</button>
+        </div>
+        <p><span id="tracked-gap-count">0</span> 个议题已加入个人追踪</p>
+      </div>
+
+      <div class="opportunity-shell">
+        <div class="opportunity-map-wrap">
+          <div class="opportunity-map-head">
+            <span>研究机会地图</span>
+            <div class="map-axis-key">
+              <span><i class="axis-dot axis-low"></i>证据较早</span>
+              <span><i class="axis-dot axis-high"></i>证据较成熟</span>
+            </div>
+          </div>
+          <div class="opportunity-plot" id="opportunity-plot" role="group" aria-label="研究空白机会地图">
+            <span class="plot-y-title">研究杠杆 ↑</span>
+            <span class="plot-x-title">证据成熟度 →</span>
+            <span class="plot-quadrant q-tl">高杠杆 · 早证据</span>
+            <span class="plot-quadrant q-tr">高杠杆 · 成熟证据</span>
+            <span class="plot-quadrant q-bl">补证据 · 早阶段</span>
+            <span class="plot-quadrant q-br">优化验证 · 成熟</span>
+            <div id="gap-dots"></div>
+          </div>
+        </div>
+        <aside class="gap-detail" id="gap-detail" aria-live="polite"></aside>
+      </div>
+
+      <div class="section-heading gap-list-heading">
+        <div>
+          <p class="eyebrow">OPEN QUESTIONS</p>
+          <h2>可操作的研究问题</h2>
+        </div>
+        <p>点击卡片切换上方证据与切入建议。</p>
+      </div>
+      <div class="gap-list" id="gap-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-mark small" aria-hidden="true"><span></span><span></span><span></span></span>
+      <div>
+        <strong>BCI ATLAS</strong>
+        <p>为持续阅读、比较与提出问题而建。</p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <p>种子文献的题名、年份、期刊与 DOI 经 Crossref / 本地 PDF 核验。中文导读为编辑性研究笔记。</p>
+      <p>个人新增、阅读状态与批注仅保存在当前浏览器。请定期导出 JSON 备份。</p>
+    </div>
+    <button class="text-button footer-manage" type="button" data-manage>数据管理</button>
+  </footer>
+
+  <dialog class="modal add-paper-modal" id="add-paper-dialog" aria-labelledby="add-paper-title">
+    <form class="modal-panel" id="add-paper-form">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">EXPAND THE ATLAS</p>
+          <h2 id="add-paper-title">添加一篇文献</h2>
+        </div>
+        <button class="modal-close" type="button" data-close-dialog aria-label="关闭">×</button>
+      </div>
+      <p class="modal-intro">录入后会立即出现在主题地图、时间线和文献库中，并保存在此浏览器。DOI 与题名可用于去重。</p>
+      <div class="form-grid">
+        <label class="field field-wide">
+          <span>英文原题 <b>*</b></span>
+          <input name="title" required placeholder="例：A high-performance speech neuroprosthesis">
+        </label>
+        <label class="field field-wide">
+          <span>中文题名 / 阅读标题</span>
+          <input name="titleZh" placeholder="留空时沿用英文题名">
+        </label>
+        <label class="field">
+          <span>作者</span>
+          <input name="authors" placeholder="Willett et al.">
+        </label>
+        <label class="field">
+          <span>年份 <b>*</b></span>
+          <input name="year" type="number" min="1900" max="2100" required placeholder="2026">
+        </label>
+        <label class="field">
+          <span>期刊 / 会议</span>
+          <input name="venue" placeholder="Nature">
+        </label>
+        <label class="field">
+          <span>DOI</span>
+          <input name="doi" placeholder="10.1038/…">
+        </label>
+        <label class="field">
+          <span>研究主题 <b>*</b></span>
+          <select name="theme" id="add-paper-theme" required></select>
+        </label>
+        <label class="field">
+          <span>信号类型</span>
+          <select name="signal">
+            <option value="EEG">EEG</option>
+            <option value="ECoG">ECoG</option>
+            <option value="Intracortical">皮层内记录</option>
+            <option value="Non-invasive">非侵入式</option>
+            <option value="Conceptual">概念 / 综述</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>证据类型</span>
+          <select name="kind">
+            <option value="recent">近期前沿</option>
+            <option value="breakthrough">方法突破</option>
+            <option value="classic">经典奠基</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>标签</span>
+          <input name="tags" placeholder="speech, ECoG, real-time">
+        </label>
+        <label class="field field-wide">
+          <span>一句话贡献</span>
+          <textarea name="summary" rows="3" placeholder="这篇论文改变了对什么问题的理解？"></textarea>
+        </label>
+        <label class="field field-wide">
+          <span>为什么值得进入你的研究地图</span>
+          <textarea name="why" rows="2" placeholder="与你的问题、方法或临床场景的连接"></textarea>
+        </label>
+        <label class="field field-wide">
+          <span>关键局限</span>
+          <textarea name="limitation" rows="2" placeholder="样本、任务、泛化或外部验证上的边界"></textarea>
+        </label>
+      </div>
+      <p class="form-error" id="add-paper-error" role="alert" hidden></p>
+      <div class="modal-actions">
+        <button class="button button-secondary" type="button" data-close-dialog>取消</button>
+        <button class="button button-primary" type="submit">加入研究地图</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="modal detail-modal" id="paper-detail-dialog" aria-labelledby="paper-detail-title">
+    <div class="modal-panel paper-detail-panel" id="paper-detail-content"></div>
+  </dialog>
+
+  <dialog class="modal manage-modal" id="manage-data-dialog" aria-labelledby="manage-data-title">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">PERSONAL LIBRARY</p>
+          <h2 id="manage-data-title">导入 / 导出与备份</h2>
+        </div>
+        <button class="modal-close" type="button" data-close-dialog aria-label="关闭">×</button>
+      </div>
+      <p class="modal-intro">网站本身离线可用。个人新增文献、阅读状态、收藏、议题追踪和批注保存在浏览器本地；导出 JSON 可以跨设备迁移。</p>
+      <div class="storage-summary">
+        <div><span>个人新增</span><strong id="storage-paper-count">0</strong></div>
+        <div><span>阅读记录</span><strong id="storage-reading-count">0</strong></div>
+        <div><span>议题追踪</span><strong id="storage-gap-count">0</strong></div>
+      </div>
+      <div class="manage-actions">
+        <button class="button button-primary" id="export-data" type="button">导出个人数据</button>
+        <label class="button button-secondary file-button">
+          导入 JSON
+          <input id="import-data-input" type="file" accept="application/json,.json">
+        </label>
+      </div>
+      <div class="manage-divider"><span>种子文献持续更新</span></div>
+      <p class="manage-note">如需把新增文献作为团队或项目的固定数据，请编辑 <code>data/papers.js</code>，而不是只保存在某个浏览器中。README 中给出了字段说明。</p>
+      <p class="form-error" id="import-data-error" role="alert" hidden></p>
+      <div class="modal-actions">
+        <button class="button button-secondary" type="button" data-close-dialog>完成</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal ipad-modal" id="ipad-dialog" aria-labelledby="ipad-dialog-title">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">IPAD WORKSPACE</p>
+          <h2 id="ipad-dialog-title">在 iPad 上打开</h2>
+        </div>
+        <button class="modal-close" type="button" data-close-dialog aria-label="关闭">×</button>
+      </div>
+      <p class="modal-intro">网站已经适配 iPad 的横屏、竖屏和触控操作。临时使用时让电脑与 iPad 连接同一个 Wi‑Fi；长期离线使用则需把网站部署到 HTTPS 地址后添加到主屏幕。</p>
+      <div class="ipad-status" id="ipad-status" aria-live="polite"></div>
+      <div class="ipad-options">
+        <section class="ipad-option">
+          <span class="ipad-option-number">01</span>
+          <h3>同一 Wi‑Fi 临时使用</h3>
+          <ol>
+            <li>在电脑上运行项目目录中的 <code>start-ipad.ps1</code>。</li>
+            <li>如果 Windows 防火墙询问，请允许专用网络访问。</li>
+            <li>在 iPad Safari 中打开脚本显示的局域网地址，例如 <code>http://192.168.1.8:8080</code>。</li>
+          </ol>
+          <p>这种方式适合日常学习和批注。个人新增文献保存在 iPad Safari 中，停止电脑服务器后页面需要重新服务。</p>
+        </section>
+        <section class="ipad-option">
+          <span class="ipad-option-number">02</span>
+          <h3>主屏幕与离线模式</h3>
+          <ol>
+            <li>把整个项目文件夹部署到 GitHub Pages、Cloudflare Pages 或其他 HTTPS 静态托管。</li>
+            <li>在 iPad Safari 打开部署地址，等待页面完整加载一次。</li>
+            <li>点击 Safari 的“分享”，选择“添加到主屏幕”。</li>
+          </ol>
+          <p>网站已包含离线缓存。HTTPS 部署后可从主屏幕独立打开，并在断网时继续浏览种子文献。</p>
+        </section>
+      </div>
+      <div class="ipad-sync-note">
+        <strong>同步电脑上的个人文献</strong>
+        <p>先在电脑点击“导入 / 导出 → 导出个人数据”，把 JSON 文件通过隔空投送或 iCloud 发送到 iPad；再在 iPad 的网站中导入。</p>
+      </div>
+      <div class="modal-actions">
+        <a class="button button-secondary" href="README.md" target="_blank" rel="noopener">查看部署说明</a>
+        <button class="button button-primary" type="button" data-close-dialog>知道了</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/papers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

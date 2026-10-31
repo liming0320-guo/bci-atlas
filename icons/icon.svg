@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">BCI Atlas</title>
+  <desc id="desc">深绿色圆角方形中包含神经轨道与 BCI 缩写</desc>
+  <rect width="512" height="512" rx="112" fill="#0c5b53"/>
+  <circle cx="256" cy="256" r="145" fill="none" stroke="#f3efe4" stroke-opacity=".32" stroke-width="7"/>
+  <circle cx="256" cy="256" r="87" fill="#f8f6ed"/>
+  <path d="M112 331 256 256l145-78" fill="none" stroke="#f3efe4" stroke-opacity=".72" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="112" cy="331" r="20" fill="#e5c35d"/>
+  <circle cx="401" cy="178" r="18" fill="#f07b5e"/>
+  <circle cx="256" cy="111" r="14" fill="#bed47d"/>
+  <text x="256" y="277" fill="#0c5b53" font-family="Arial, sans-serif" font-size="66" font-weight="700" letter-spacing="8" text-anchor="middle">BCI</text>
+</svg>
