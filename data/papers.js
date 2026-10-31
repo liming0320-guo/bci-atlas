@@ -1,6 +1,6 @@
 /*
  * BCI Atlas seed library
- * 元数据核验日期：2026-10-30
+ * 元数据核验日期：2026-10-31
  * 来源：Crossref 公开元数据；2024–2026 的四篇 EEG 痴呆/MCI 论文另由本地 PDF 复核。
  * 新增论文时可直接在 papers 数组中追加同结构对象，或使用网站内的“添加文献”。
  */
@@ -8,7 +8,7 @@ window.BCI_SEED_DATA = {
   meta: {
     title: "BCI Atlas",
     version: 1,
-    updated: "2026-10-30",
+    updated: "2026-10-31",
     scope:
       "以脑机接口的范式、神经信号、解码、交流、运动康复、认知临床与转化为核心的策展型文献库。",
   },
